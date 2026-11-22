@@ -1,0 +1,19 @@
+{
+  "main": {
+    "entrypoint": "inference/run_main.py",
+    "code": "src/main_model",
+    "checkpoints": ["teacher_msfe.pt", "srsn_z.pt"]
+  },
+  "conv_tasnet_ic": {
+    "entrypoint": "inference/run_ic.py",
+    "code": ["src/ic_convtasnet", "src/baselines/IC_Conv-TasNet"],
+    "checkpoints": ["ic_convtasnet_seat_id.pt", "ic_convtasnet_registration.pt"]
+  },
+  "so_das": {
+    "entrypoint": "inference/run_sodas.py",
+    "code": "src/sodas",
+    "checkpoints": ["sodas_gt_doa.pt", "sodas_reg_phase.pt"]
+  },
+  "demo_data_included": false,
+  "checkpoints_included": false
+}
